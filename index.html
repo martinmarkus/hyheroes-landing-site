@@ -16,7 +16,6 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 	<link rel="icon" href="img/logo.png">
-
 </head>
 <body class="content-section">
 
@@ -44,57 +43,83 @@
 	<!-- Header -->
 	<header id="head" class="parallax ">
 		<h1>HYHEROES</h1>
-		<h3 style="margin-bottom:60px;">IP: HAMAROSAN</h3>
+		<h3 style="margin-bottom:60px;margin-top: 20px;">IP<a id="ip-container-1" class="ip-container">HAMAROSAN</a></h3>
 
-		<a class="trailer-img" href="#hytale" title="Hytale trailer"></a>
+		<a href="#hytale" class="trailer-img" title="Hytale trailer"></a>
 	</header>
 	<!-- End Header -->
 
 	<section id="hytale">
 		<h1>Mi az a Hytale?</h1>
 		<hr>
-		<div style="margin-left: 66px; margin-right: 66px; margin-top:90px; display: inline-block; vertical-align:top;">
-			<iframe width="560" height="315"
-			src="https://www.youtube.com/embed/o77MzDQT1cg"
-			frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-			allowfullscreen>
-		   </iframe>
-		</div>
-		<div style="width: 40%; margin-left: 66px; margin-right: 66px; margin-top: 30px; display: inline-block;">
-			<p style="text-align: justify; margin-bottom: 20px;">
-				A Hytale a Hypixel Studios fejlesztésében álló 'sandbox' és 'roleplaying game' műfajokat magába foglaló videojáték.
-				A Hytale a blokkról-blokkra történő építéstől egészen a közösségi fejlesztésű játékmódok megalkotásáig minden eszközt a 
-				kezünkbe ad, hogy kiéljük a képzeletünket.
-			</p>
-			<p style="text-align: justify; margin-bottom: 20px;">
-				FELFEDEZÉS<br>
-				Készülj fel a kalandos utazásra a procedurálisan generált világok idegen épületeibe és sötét kazamaták mélyébe, 
-				ahol mesés jutalmak várnak rád! Bukkanj rá mágusok tornyaira tele szörnyetegekkel, szállj alá földalatti 
-				barlangjáratokba, vagy akár nézz szembe koloszzális boss-okkal!
-			</p>
-			<p style="text-align: justify; margin-bottom: 20px;">
-				JÁRD A SAJÁT UTADAT!<br>
-				A Hytale különféle játékstílusokat is támogat. Ha inkább letelepednél és birtokot alapítanál, kézműveskednél,
-				 vagy a távolba kalandoznál, a Hytale rengeteg tennivalóval kecsegtet, de az igazi élmény online kezdődik.
-			</p>
-			<p style="text-align: justify; margin-bottom: 20px;">
-				MINIGAME-EK<br>
-				A Hytale számos minigame-et kínál a játékuk mellé, amelyet Hypixel Network során vezetett tapasztalataik alapján 
-				fejlesztettek. A legismertebb Minecraft játékmódok, mint a BedWars, 
-				vagy SkyWars a Hytale PvP szegmensének alapjait képezik.
-			</p>
+		<div class="row fixed-width">
+			<div class="col-md img" style="margin-right: 66px; margin-left: 66px; margin-top:30px">
+				<iframe style="width: 100%;" id="trailer-video"
+					src="https://www.youtube.com/embed/o77MzDQT1cg"
+					frameborder="1"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+					allowfullscreen>
+				</iframe>
+			</div>
+			<div class="col-md mode" style="margin-right: 66px; margin-left: 66px; margin-top:30px">
+				<p style="text-align: justify; margin-bottom: 20px;">
+					A Hytale a Hypixel Studios által fejlesztett sandbox és szerepjáték műfajokat ötvöző videojáték.
+					A Hytale a blokkról-blokkra történő építéstől egészen a közösségi fejlesztésű játékmódok megalkotásáig minden eszközt a 
+					kézbe ad a kreativ online közösségi élmény megélésére.
+				</p>
+			</div>
 		</div>
 	</section>
 
+
 	<section id="banner" class="parallax">
-		<h1>Jelenleg <a style="color: rgb(116, 1, 1);">{{ playerCount }}</a> Online tag</h1>
-		<h2>IP: HAMAROSAN</h2>
+		<h1>Jelenleg <div style="color: rgb(116, 1, 1); display: inline-block;"
+			 id="player-counter">N/A</div> Online tag</h1>
+		<h3 style="margin-bottom:60px;margin-top: 20px;">IP<a id="ip-container-2" class="ip-container">
+			HAMAROSAN</a></h3>
+
 	</section>
 
 	<section id="news">
 		<h1>HÍREK</h1>
 		<hr>
-
+		<div id="news-container" style="margin: auto; display:none">
+			<div class="row fixed-width">
+				<div class="col-md mode news">
+					<h4>Legfirssebb</h4>
+					<h1 id="news1-header" style="margin-top: 0!important;"></h1>
+					<p id="news1-stamp" class="news-stamp"></p>
+					<p id="news1-content"></p>
+				</div>
+				<div class="col-md mode news" style="margin-left: 30px;">
+					<img id="kweebec-news" src="img/kweebec.png" width="250" style="margin-top: 30px;">
+				</div>
+			</div>
+			<div class="row fixed-width">
+				<div class="col-md mode news">
+					<h2 id="news2-header"></h2>
+					<p id="news2-stamp" class="news-stamp"></p>
+					<p id="news2-content"></p>
+				</div>
+				<div class="col-md mode news">
+					<h2 id="news3-header"></h2>
+					<p id="news3-stamp" class="news-stamp"></p>
+					<p id="news3-content"></p>
+				</div>
+			</div>
+			<div class="row fixed-width">
+				<div class="col-md mode news">
+					<h2 id="news4-header"></h2>
+					<p id="news4-stamp" class="news-stamp"></p>
+					<p id="news4-content"></p>
+				</div>
+				<div class="col-md mode news">
+					<h2 id="news5-header"></h2>
+					<p id="news5-stamp" class="news-stamp"></p>
+					<p id="news5-content"></p>
+				</div>
+			</div>
+		</div>
 	</section>
 
 	<!-- Banner 1 -->
@@ -129,8 +154,8 @@
 
 		<div class="row fixed-width">
 			<div class="col-md mode">
-				<h2>SURVIVAL</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu elementum justo. Morbi in venenatis dui. Mauris quis efficitur orci, ut venenatis massa. Pellentesque gravida ante sit amet condimentum tristique. Suspendisse at gravida nunc, mattis sagittis velit. Pellentesque molestie mauris risus, et elementum metus mattis sit amet. Aliquam id ex ac augue tempor convallis. Nunc id consequat nibh. Suspendisse rhoncus nulla at nisl egestas vulputate vel vitae ex. In est nibh, tempus vitae ipsum vel, eleifend dictum diam. Ut dapibus massa sed turpis dictum pretium. Mauris tempus sapien sit amet turpis sodales, sit amet sollicitudin augue tincidunt. Donec ullamcorper suscipit laoreet.</p>
+				<h2>Játékmód #1</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu elementum justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu elementum justo.</p>
 			</div>
 			<div class="col-md img">
 				<img class="res-img" src="https://via.placeholder.com/1920x1080">
@@ -142,15 +167,15 @@
 						<img class="res-img" src="https://via.placeholder.com/1920x1080">
 					</div>
 				<div class="col-md mode">
-					<h2>FACTIONS</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu elementum justo. Morbi in venenatis dui. Mauris quis efficitur orci, ut venenatis massa. Pellentesque gravida ante sit amet condimentum tristique. Suspendisse at gravida nunc, mattis sagittis velit. Pellentesque molestie mauris risus, et elementum metus mattis sit amet. Aliquam id ex ac augue tempor convallis. Nunc id consequat nibh. Suspendisse rhoncus nulla at nisl egestas vulputate vel vitae ex. In est nibh, tempus vitae ipsum vel, eleifend dictum diam. Ut dapibus massa sed turpis dictum pretium. Mauris tempus sapien sit amet turpis sodales, sit amet sollicitudin augue tincidunt. Donec ullamcorper suscipit laoreet.</p>
+					<h2>Játékmód #2</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu elementum justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu elementum justo.</p>
 				</div>
 			</div>
 		</section>
 		<div class="row fixed-width">
 			<div class="col-md mode">
-				<h2>CREATIVE</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu elementum justo. Morbi in venenatis dui. Mauris quis efficitur orci, ut venenatis massa. Pellentesque gravida ante sit amet condimentum tristique. Suspendisse at gravida nunc, mattis sagittis velit. Pellentesque molestie mauris risus, et elementum metus mattis sit amet. Aliquam id ex ac augue tempor convallis. Nunc id consequat nibh. Suspendisse rhoncus nulla at nisl egestas vulputate vel vitae ex. In est nibh, tempus vitae ipsum vel, eleifend dictum diam. Ut dapibus massa sed turpis dictum pretium. Mauris tempus sapien sit amet turpis sodales, sit amet sollicitudin augue tincidunt. Donec ullamcorper suscipit laoreet.</p>
+				<h2>Játékmód #3</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu elementum justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu elementum justo.</p>
 			</div>
 			<div class="col-md img">
 				<img class="res-img" src="https://via.placeholder.com/1920x1080">
@@ -233,11 +258,9 @@
 	<!-- End Staff Section -->
 	
 	<!-- Footer -->
-	<footer>
+	<footer id="footer">
 		<div class="footer">
-			<div class="copyright-notice">
-				<a href="#"><img src="img\logo-2.png" width="200" style="float:left;margin-top: 0px!important; margin-right: 20px;"></a>
-
+			<div class="copyright-notice" style="display: inline-block;">
 				<div style="text-align: right; padding-right: 20px; text-align: left;">
 					<p style="margin-bottom: 10px; margin-top: 30px;">
 						<a target="_blank" href="https://facebook.com/HyHeroesHu">
@@ -250,8 +273,8 @@
 						</a>
 					</p>
 					<p style="margin-bottom: 10px;">
-						<a href="mailto:info@hyheroes.hu">
-							info@hyheroes.hu
+						<a target="_blank" href="https://discord.gg/R65HpqY">
+							HyHeroes.hu/Discord
 						</a><br>
 					</p>
 					<p style="padding-top: 30px;">
@@ -263,14 +286,74 @@
 	
 				</div>
 			</div>
+
+			<div  style="display: inline-block; float:right; margin-top: 30px;">
+				<a href="#"><img src="img\logo-2.png" width="200" style=" margin-top: 0px!important; margin-right: 20px;"></a>
+				<div style="text-align: right; padding-left: 20px; float: right;">
+					<p style="margin-bottom: 10px;">
+						<b>Márkus Martin EV.</b> - <i>Üzemeltető</i>
+					</p>
+					<p style="margin-bottom: 10px;">
+						<b>55372109-1-36</b> - <i>Adószám</i>
+					</p>
+					<p style="margin-bottom: 10px;">
+						<b><a href="mailto:info@hyheroes.hu">
+							info@hyheroes.hu
+						</a></b> - <i>Kapcsolat</i>
+					</p>
+				</div>
+			</div>
+
 		</div>
 	</footer>
 	<!-- End Footer -->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
+		function getPlayerCount() {
+			const apiUrl = "https://localhost:44336";
+			$.get(apiUrl + "/User/GetOnlinePlayerCount", function(data, status, error) {
+				if (data !== undefined && data.playerCount !== undefined) {
+					$("#player-counter").html(data.playerCount);
+				}
+			});
+			$.get(apiUrl + "/News/GetNews", function(data) {
+				if (data !== undefined) {
+					$("#news-container").show();
+					$("#news-container").css("display", "inline-block");
+					for (var i = 0; i < data.length; i++) {
+						if (i >= 5) {
+							break;
+						}
+						$("#news" + (i+1) + "-header").html(data[i].title);
+						$("#news" + (i+1) + "-content").html(data[i].preview);
+						$("#news" + (i+1) + "-stamp").html(data[i].publishDate + " - " + data[i].publisherName);
+					}
+				}
+			});
+		}
+
 		$(document).ready(function(){
-		  $("a").on('click', function(event) {
+			getPlayerCount();
+			resizeVideo();
+			$(window).resize(function() {
+				resizeVideo();
+
+				if ($("#footer").width() < 980) {
+					$("#footer").height(500);
+				} else {
+					$("#footer").height(250);
+				}
+			});
+
+			$("#ip-container-1").click(function() {
+				copyToClipboard("#ip-container-1");
+			});
+			$("#ip-container-2").click(function() {
+				copyToClipboard("#ip-container-2");
+			});
+
+		  	$("a").on('click', function(event) {
 
 		    if (this.hash !== "") {
 		      event.preventDefault();
@@ -286,6 +369,26 @@
 		    }
 		  });
 		});
+
+		function resizeVideo() {
+			$("#trailer-video").height($("#trailer-video").width() * 0.56);
+		}
+
+		function copyIp() {
+			var ip = document.getElementById("ip-container");
+			ip.select();
+			ip.setSelectionRange(0, 64);
+			document.execCommand("copy");
+		}
+
+		function copyToClipboard(element) {
+			var $temp = $("<input>");
+			$("body").append($temp);
+			$temp.val($(element).text()).select();
+			document.execCommand("copy");
+			$temp.remove();
+		}
+
 	</script>
 
 	<script>
