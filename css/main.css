@@ -1,9 +1,39 @@
+.loader {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: transparent;
+	display: inline-block;
+	overflow: hidden;
+	transform: translatey(0px);
+	animation: float 3s ease-in-out infinite;
+	background-color: transparent;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+
 .ip-container {
 	font-size: 32px;
 	padding: 8px;
 	margin: 8px;
-	color:rgb(255, 227, 174);
+	color:  rgb(80, 10, 53);
 	background-color: transparent;
+}
+
+.ip-container:hover {
+	cursor: pointer;
 }
 
 .news-stamp {
@@ -37,10 +67,15 @@
 }
 
 .trailer-img {
+	border-radius: 28px;
+	border: 1px solid transparent;
+	opacity: 0.8;
 	display:inline-block;
 	background:transparent url('../img/hytale-trailer-1.png') center top no-repeat;
 	width: 50%;
 	height:281px;
+	max-width: 500px;
+
    }
    
 .trailer-img:hover {
