@@ -13,7 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-grid.min.css">
 	<link rel="stylesheet" type="text/css" href="js/bootstrap/bootstrap.min.js">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css?v=0.1">
 
 	<link rel="icon" href="img/logo.png">
 </head>
@@ -31,7 +31,7 @@
 			  <a class="navbar-button" href="#news">Hírek</a>
 			  <a class="navbar-button" href="#servers">Szervereink</a>
 			  <a class="navbar-button" href="#connect">Csatlakozás</a>
-			  <a class="navbar-button" href="#staff">Kapcsolat</a>
+			  <a class="navbar-button" href="#contact">Kapcsolat</a>
 			  <a class="navbar-button" target="_blank" href="https://docs.google.com/forms/d/1UeKm4CKBxq2KIdppRjnNDdi-Le7k5OCy5YxccqG1Cjs/edit">Tagfelvétel</a>
 			  <a class="navbar-button" target="_blank" href="https://discord.gg/R65HpqY" >Discord</a>
 			  <a target="_blank" href="http://localhost:4200" style="color: orange">Boltunk</a>
@@ -124,9 +124,10 @@
 
 	<!-- Banner 1 -->
 	<section id="banner2" class="parallax">
-		<h2>TÁMOGATNÁL MINKET?</h2>
-		<h1><a class="a-shop" target="_blank" href="http://localhost:4200">BOLT.HYHEROES.HU</a></h1>
-	</section>
+		<h1><div style="color: rgb(80, 10, 53); display: inline-block;"
+			id="registered-user-counter">N/A</div> Regisztrált tag</h1>
+	   <h3 style="margin-top: 20px;">IP<a id="ip-container-3" class="ip-container">
+		   HAMAROSAN</a></h3>	</section>
 	<!-- End Banner 1 -->
 
 	<!-- Servers Section -->
@@ -208,7 +209,7 @@
 	</section>
 
 	<!-- Third Banner -->
-	<section id="banner3" class="parallax">
+	<section id="contact" class="parallax">
 		<h1>Kapcsolat</h1>
 		<h2><a style="color: rgb(72, 72, 224)" href="mailto:info@hyheroes.hu">INFO@HYHEROES.HU</a></h2>
 		<h2><a style="color: rgb(72, 72, 224)" target="_blank" href="https://discord.gg/R65HpqY">DISCORD</a></h2>
@@ -224,34 +225,34 @@
 			<div class="col-md staffblock">
 				<img width="100px;" src="">
 				<h2><a style="color: rgb(135, 135, 252)">...</a></h2>
-				<p>Videós</p>
+				<p></p>
 			</div>
 			<div class="col-md staffblock">
 				<img width="100px;" src="">
 				<h2><a style="color: rgb(135, 135, 252)">...</a></h2>
-				<p>Videós</p>
+				<p></p>
 			</div>
 			<div class="col-md staffblock">
 				<img width="100px;" src="">
 				<h2><a style="color: rgb(135, 135, 252)">...</a></h2>
-				<p>Videós</p>
+				<p></p>
 			</div>
 		</div>
 		<div class="row stafflist">
 			<div class="col-md staffblock">
 				<img width="100px;" src="">
 				<h2><a style="color: rgb(135, 135, 252)">...</a></h2>
-				<p>Videós</p>
+				<p></p>
 			</div>
 			<div class="col-md staffblock">
 				<img width="100px;" src="">
 				<h2><a style="color: rgb(135, 135, 252)">...</a></h2>
-				<p>Videós</p>
+				<p></p>
 			</div>
 			<div class="col-md staffblock">
 				<img width="100px;" src="">
 				<h2><a style="color: rgb(135, 135, 252)">...</a></h2>
-				<p>Videós</p>
+				<p></p>
 			</div>
 		</div>
 	</section>
@@ -310,7 +311,7 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
-		function getPlayerCount() {
+		function getAPIData() {
 			const apiUrl = "https://localhost:44336";
 			$.get(apiUrl + "/User/GetOnlinePlayerCount", function(data, status, error) {
 				if (data !== undefined && data.playerCount !== undefined) {
@@ -331,10 +332,15 @@
 					}
 				}
 			});
+			$.get(apiUrl + "/User/GetRegisteredUserCount", function(data, status, error) {
+				if (data !== undefined && data.registeredUserCount !== undefined) {
+					$("#registered-user-counter").html(data.registeredUserCount);
+				}
+			});
 		}
 
 		$(document).ready(function(){
-			getPlayerCount();
+			getAPIData();
 			resizeVideo();
 			$(window).resize(function() {
 				resizeVideo();
@@ -351,6 +357,9 @@
 			});
 			$("#ip-container-2").click(function() {
 				copyToClipboard("#ip-container-2");
+			});
+			$("#ip-container-3").click(function() {
+				copyToClipboard("#ip-container-3");
 			});
 
 		  	$("a").on('click', function(event) {

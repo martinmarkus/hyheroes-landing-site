@@ -23,7 +23,6 @@
 	}
 }
 
-
 .ip-container {
 	font-size: 32px;
 	padding: 8px;
@@ -33,7 +32,9 @@
 }
 
 .ip-container:hover {
-	cursor: pointer;
+	cursor: pointer!important;
+	color: #192a56;
+	transition: all .2s ease-in;
 }
 
 .news-stamp {
@@ -357,7 +358,7 @@ a:hover {
 	text-align: center;
 }
 
-#banner3 {
+#contact {
 	background-image: url("../img/hytale-wallpaper-2.jpg");
 	padding: 75px 0px 75px 0px;
 	text-align: center;
@@ -389,14 +390,14 @@ a:hover {
 	color: white;
 }
 
-#banner3 h1 {
+#contact h1 {
 	font-size: 30px;
 	font-weight: 700;
 	text-transform: uppercase;
 	color: white;
 }
 
-#banner3 h2 {
+#contact h2 {
 	margin-top: 5px;
 	font-size: 20px;
 	color: white;
